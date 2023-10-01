@@ -1,7 +1,7 @@
 from pico2d import *
 import random
 
-open_canvas()
+open_canvas(800, 600)
 
 tuk_ground = load_image('TUK_GROUND.png')
 character = load_image('animation_sheet.png')
@@ -19,8 +19,8 @@ def handle_events():
             running = False
 
 running = True
-x , y = 800 // 2, 600 // 2 # character coord
-px, py, ax, ay = 0, 0, random.randint(100, 700), random.randint(100, 700) # prevent, arrow coord
+x , y = 400, 300 # character coord
+px, py, ax, ay = 400, 300, random.randint(100, 700), random.randint(100, 700) # prevent, arrow coord
 frame = 0
 i = 0
 while running:
@@ -32,7 +32,7 @@ while running:
         y = (1 - t) * py + t * ay
         i += 2
         if i > 100:
-            ax, ay = random.randint(100, 700), random.randint(100, 700)
+            ax, ay = random.randint(100, 700), random.randint(100, 500)
             px, py = x ,y
             i = 0
 
