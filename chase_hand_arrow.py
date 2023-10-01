@@ -1,17 +1,18 @@
 from pico2d import *
+import random
 
 open_canvas()
 
 tuk_ground = load_image('TUK_GROUND.png')
 character = load_image('blueHeadCharacter.png')
 TUK_WIDTH, TUK_HEIGHT = 1280, 1024
+
 running = True
-anim = 0
 x = 800 // 2
 y = 600 // 2
 
 def handle_events():
-    global running, anim, x, y
+    global running, x, y
     events = get_events()
     for event in events:
         if event.type == SDL_QUIT:
